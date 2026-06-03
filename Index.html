@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">Jane<span>Doe</span></div>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <h1>Hi, I'm a <span class="highlight">Creative Developer</span></h1>
+            <p>I build beautiful, user-friendly websites and digital experiences.</p>
+            <a href="#projects" class="btn">View My Work</a>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2>About Me</h2>
+            <hr class="separator">
+            <p>I am a passionate developer with expertise in HTML, CSS, JavaScript, and modern web frameworks. I love turning complex problems into simple, beautiful, and intuitive designs. When I'm not coding, you can find me exploring new tech, drinking coffee, or hiking.</p>
+            
+            <div class="skills">
+                <span class="skill-badge">Frontend Dev</span>
+                <span class="skill-badge">UI/UX Design</span>
+                <span class="skill-badge">JavaScript</span>
+                <span class="skill-badge">React</span>
+                <span class="skill-badge">Responsive Design</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            <hr class="separator">
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img placeholder-1"></div>
+                    <div class="project-info">
+                        <h3>E-Commerce Platform</h3>
+                        <p>A full-featured online store with seamless cart management and checkout features.</p>
+                        <a href="#" class="project-link">View Project →</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-img placeholder-2"></div>
+                    <div class="project-info">
+                        <h3>Dashboard Analytics</h3>
+                        <p>An interactive, data-driven dashboard tracking real-time business metrics and user data.</p>
+                        <a href="#" class="project-link">View Project →</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-img placeholder-3"></div>
+                    <div class="project-info">
+                        <h3>Task Manager App</h3>
+                        <p>A sleek productivity application featuring drag-and-drop task organization.</p>
+                        <a href="#" class="project-link">View Project →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <hr class="separator">
+            <p class="contact-sub">Have a project in mind or just want to chat? Drop me a message!</p>
+            
+            <form class="contact-form" action="#" method="POST">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Jane Doe. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
