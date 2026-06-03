@@ -6,6 +6,16 @@
     <title>My Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>Contact Form papuntang Gmail</title>
+    
+    <!-- I-include ang opisyal na EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // ⚠️ PALITAN ITO NG IYONG PUBLIC KEY GALING SA EMAILJS
+            emailjs.init("YOUR_PUBLIC_KEY");
+        })();
+    </script>
 </head>
 <body>
 
@@ -102,6 +112,55 @@
         </div>
     </section>
 
+     <h2>Magpadala ng Mensahe sa Aking Gmail</h2>
+    
+    <!-- Ang iyong Form -->
+    <form id="contact-form">
+        <label>Pangalan mo:</label><br>
+        <input type="text" id="user_name" required><br><br>
+        
+        <label>Email mo:</label><br>
+        <input type="email" id="user_email" required><br><br>
+        
+        <label>Mensahe:</label><br>
+        <textarea id="user_message" required></textarea><br><br>
+        
+        <button type="submit">I-send sa Gmail</button>
+    </form>
+
+    <p id="status-message"></p>
+
+    <!-- Ang JavaScript Logic -->
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Pigilan ang pag-refresh ng page
+
+            const statusText = document.getElementById('status-message');
+            statusText.innerText = "Ipinapadala...";
+
+            // Kuhanin ang mga ininput ng user
+            const templateParams = {
+                from_name: document.getElementById('user_name').value,
+                reply_to: document.getElementById('user_email').value,
+                message: document.getElementById('user_message').value
+            };
+
+            // ⚠️ PALITAN ANG MGA ITO NG IYONG SERVICE ID AT TEMPLATE ID
+            const serviceID = 'YOUR_SERVICE_ID';
+            const templateID = 'YOUR_TEMPLATE_ID';
+
+            // I-send ang email gamit ang EmailJS
+            emailjs.send(serviceID, templateID, templateParams)
+                .then(function(response) {
+                    statusText.innerText = "✅ Matagumpay na naipadala sa Gmail!";
+                    document.getElementById('contact-form').reset(); // I-clear ang form
+                    console.log('SUCCESS!', response.status, response.text);
+                }, function(error) {
+                    statusText.innerText = "❌ Nagka-error sa pagpapadala. Subukan uli.";
+                    console.log('FAILED...', error);
+                });
+        });
+    </script
     <footer>
         <p>&copy; 2026 Jane Doe. All rights reserved.</p>
     </footer>
